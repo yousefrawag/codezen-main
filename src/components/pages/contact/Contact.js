@@ -14,6 +14,7 @@ const Contact = () => {
   const [errors , seterrors] = useState({})
   const [customer_data, setcustomer_data] = useState(
     {
+    
     name: "",
     email: "",
     phone: "",
