@@ -1,0 +1,202 @@
+   @import '../../variables/variables.scss';
+   @import '../../variables/mixins.scss';
+
+   @keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+#title {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    color: #FFF;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    // align-items: center;
+    // justify-content: space-between;
+  }
+  #title .text-title {
+    -webkit-text-fill-color: white;
+    width: 100%;
+    text-align: start;
+    margin-top: 6rem;
+  
+  }
+
+  #title .text-title p {
+    font-size: 35px;
+    text-transform: capitalize;
+    line-height: 1.8;
+  }
+
+  #title .text-title a {
+    @include creatBtn;
+    margin: 20px 10px;
+    background-color: $color-2;
+    &:hover {
+        background-color: $color-1;
+        color: white;
+    }
+  }
+
+//   #title .ava-img {
+//     width: 50%;
+//   }
+
+  #title .ava-img img {
+    width: 400px;
+    object-fit: cover;
+    margin-top: 30px;
+
+  }
+.waveWrapper {
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background-image: linear-gradient(to top, #f7723e 0%, $color-2 100%);
+
+    
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+
+    
+
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+    background-image: linear-gradient(to top, #f7723e 0%, $color-2 100%);
+  
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+  
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+   -webkit-animation: move-wave 3s;
+   -webkit-animation-delay: 1s;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+@media screen and (max-width: 768px) {
+
+
+  #title {
+            .text-title {
+                text-align: center !important;
+                margin-top: 8rem!important;
+            p {
+                font-size: 25px;
+                text-transform: capitalize;
+                  line-height: 1.8;
+                  width: 100%!important;
+
+            } }
+
+            #title .text-title a {
+                @include creatBtn;
+                margin: 20px 10px;
+                background-color: $color-2;
+                &:hover {
+                    background-color: $color-1;
+                    color: white;
+                }
+            } 
+            .ava-img{
+                display: none;
+            } 
+            .text-title {
+                -webkit-text-fill-color: white;
+                width: 100%;
+                text-align: start;
+                margin-top: 6rem;
+            
+            } 
+}   
+}
+@media screen and (min-width:200px) and (max-width: 500px) {
+
+
+    #title {
+              .text-title {
+                margin-top: 9rem !important;
+                  text-align: center !important;
+              p {
+                  font-size: 23px;
+                  text-transform: capitalize;
+                    line-height: 1.8;
+                    width: 100%!important;
+  
+              } }
+  
+              #title .text-title a {
+                  @include creatBtn;
+                  margin: 20px 10px;
+                  background-color: $color-2;
+                  &:hover {
+                      background-color: $color-1;
+                      color: white;
+                  }
+              } 
+              .ava-img{
+                  display: none;
+              } 
+              .text-title {
+                  -webkit-text-fill-color: white;
+                  width: 100%;
+                  text-align: start;
+                  margin-top: 6rem;
+              
+              } 
+  }   
+  }
