@@ -96,7 +96,9 @@
   "footer_upper": {
       "best_inbox": "best offers in your inbox",
       "place_holder": "Your Email",
-      "Subscribe": "Subscribe"
+      "Subscribe": "Subscribe",
+      "Subscribe2": "Subscribe..."
+      
   },
 
   "footer_center": {
@@ -201,6 +203,23 @@
        
       },
       {
+        "id": "050",
+        "category":"Web Design", 
+        "bage":{
+          "imgUrl":"../../../images/Screenshot (145).png",
+          "title": "Zadna platform for marketing",
+          "description":
+            " Zidna platform is a platform for the world of e-marketing. We offer you a summary of our experience, to reach potential customers and achieve your goals. Digital marketing is the first step; In order to build an integrated brand, with us you get an integrated package of services that support your business, communicate now, and develop your business",
+          "technologies":  ["html", " css", "js", "bootstrap" , "jeQuery"],
+          "siteUrl": "https://zednah.com/",
+        "client":{
+          "name":"mohamed ahemd",
+          "urimage":""
+        }
+        }
+       
+      },
+      {
         "id": "02", 
         "category": "Ux Desigin",
         "bage":{
@@ -216,6 +235,22 @@
         }
         }
         
+      },
+      {
+        "id": "0100",
+        "category": "Web Design",
+        "bage":{
+          "title": "Ocoda Design Services",
+          "description":"Ocoda Design Services was established in Saudi Arabia by ambitious, creative, and experienced cadres in the field of creative design, to become one of the largest official and accredited companies specialized in the fields of design, brand building and advertising solutions in Saudi Arabia and the Middle East",
+        "technologies": ["html" , "css" , "js" , "react"],
+        "imgUrl": "../../../images/Screenshot (147).png",
+        "siteUrl": "https://ocoda.com/en",
+        "client":{
+          "name":"mohamed ahemd",
+          "urimage":""
+        }
+        }
+       
       },
       {
         "id": "03",
@@ -254,6 +289,7 @@
        
       
       },
+
       {
         "id": "05",
         "category": "Web Design",

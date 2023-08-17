@@ -12,11 +12,40 @@ import {
 import {ImLocation} from "react-icons/im";
 import {FaEnvelope} from "react-icons/fa"
 import { useTranslation } from "react-i18next";
-
+import { useState } from "react";
+import emailjs from 'emailjs-com';
+import { toast } from "react-toastify";
 const Footer = () => {
   const {t} = useTranslation();
   const footerCenterLinks = t("footerCenterLinks", {returnObjects: true});
   const footerEndLinks = t("footerEndLinks", {returnObjects: true})
+  const [loading , setloading] = useState(false)
+  const [subscribe_user , setsubscribe_user] = useState({
+    name:"subscribe user",
+    email:"",
+    message:"subscribe user"
+  })
+  const handel_user = (e) => {
+    setsubscribe_user({...subscribe_user,[e.target.id]:e.target.value})
+  }
+const form_submit = async (e) =>{
+  e.preventDefault()
+  try {
+    setloading(true)
+    await emailjs.send("service_xcr9kal","template_8392w2u" , subscribe_user , "MvvmMcHoZ4pfShaNN");
+    setsubscribe_user({
+      name:"",
+      email:"",
+      message:""
+    })
+    setloading(false)
+    toast.success("the best offers in your box")
+  } catch (error) {
+    setloading(false)
+    toast.error("there is an erorr check your internet and try again")
+  }
+
+}
   return (
     <>
       <footer
@@ -33,20 +62,27 @@ const Footer = () => {
             </div>
             <div className=" col-lg-7 col-md-6 col-12">
               <div className="Sub-email">
-                <div className="input-group mb-0">
+                <form onSubmit={form_submit} className="input-group mb-0">
                   <input
                     type="text"
                     className="form-control"
                     placeholder={t('footer_upper.place_holder')}
                     aria-label="Your Email"
                     aria-describedby="basic-addon2"
+                    required
+                    id="email"
+                    name="email"
+                    value={subscribe_user.email}
+                    onChange={handel_user}
                   />
                   <div className="input-group-append">
-                    <span className="input-group-text" id="basic-addon2">
-                    {t('footer_upper.Subscribe')}
-                    </span>
+                    <button type="submit" className="input-group-text" id="basic-addon2">
+                    {
+                      loading ? t('footer_upper.Subscribe2'):t('footer_upper.Subscribe')
+                    }
+                    </button>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -92,8 +128,9 @@ const Footer = () => {
                 <address style={{ color: "#dadada", fontSize: "14px", marginBottom: '5px' }}>
                   <ImLocation style={{margin: '0 3px'}}/> {t('footer_center.address')}
                   </address>
-                  <a href="tel: +201154792430"> <BsFillTelephoneFill style={{margin: '0 3px'}}/>+201154792430</a>
+                  <a className="bages_links" href="tel: +201154792430"> <BsFillTelephoneFill style={{margin: '0 3px'}}/>+201154792430</a>
                   <a
+                     className="bages_links"
                     style={{ textTransform: "lowercase" }}
                     href="mailto: codezen92@gmail.com"
                   >
@@ -108,7 +145,7 @@ const Footer = () => {
                 <div className="footer-center-links">
                   {footerCenterLinks.map((item) => {
                     return (
-                      <Link key={item.id} to={item.href}> {item.text} </Link>
+                      <Link className="bages_links" key={item.id} to={item.href}> {item.text} </Link>
                     )
                   })}
                 </div>
@@ -120,7 +157,7 @@ const Footer = () => {
                 <div className="footer-center-links">
                 {footerEndLinks.map((item) => {
                     return (
-                      <Link key={item.id} to={item.href}> {item.text} </Link>
+                      <Link className="bages_links" key={item.id} to={item.href}> {item.text} </Link>
                     )
                   })}
 

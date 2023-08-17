@@ -16,6 +16,7 @@
         }
      }
      .about_me{
+        margin-bottom: 20px;
         background-color: white;
         height: 410px;
         border-radius: 8px;
@@ -32,6 +33,7 @@
             h6{
                 margin-top: 3px;
                 text-transform: capitalize;
+            
             }
             
             .member_image{
@@ -68,4 +70,34 @@
        
       
   
+}
+@media screen and (max-width:786px) {
+    .about_me {
+        margin-bottom: 20px !important;
+        height: 450px !important;
+        padding: 20px !important;
+        .about_me_text{
+            p{
+                
+                font-size: 13px !important;
+
+            }
+        
+        }
+    }
+}
+@media screen and (max-width:500px) {
+    .about_me {
+        margin-bottom: 20px !important;
+        height: 445px !important;
+        padding: 20px !important;
+        .about_me_text{
+            p{
+                
+                font-size: 11px !important;
+
+            }
+        
+        }
+    }
 }

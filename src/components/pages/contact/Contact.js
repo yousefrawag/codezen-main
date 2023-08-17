@@ -11,7 +11,7 @@ import Coustomheader from  "../../coustom_header/Coustomheader.jsx"
 import  Valdionmassage from"./Valdionmassage"
 const Contact = () => {
   const { t } = useTranslation();
-  const [errors , seterrors] = useState({})
+
   const [customer_data, setcustomer_data] = useState(
     {
     
@@ -31,9 +31,9 @@ const Contact = () => {
   }
  const handelFormsubmit = (e) => {
   e.preventDefault()
-  seterrors(Valdionmassage(customer_data))
 
   try {
+   
     emailjs.send("service_xcr9kal","template_8392w2u" , customer_data , "MvvmMcHoZ4pfShaNN");
     setcustomer_data(
       {
@@ -45,15 +45,18 @@ const Contact = () => {
     
     
     )
+   
  
-    toast.success("thanks for Your Message") 
-    return  navgaion("/")  
+    toast.success("thanks for Your Message")
+    return navgaion("/") 
+   
   } catch (error) {
+ 
   return  toast.error(error)
   }
 
  }
- console.log(errors);
+
   return (
     <React.Fragment>
       <BreadCrumb title="Contact" />
@@ -83,9 +86,7 @@ const Contact = () => {
                       placeholder={t("contact.la_name")}
                    
                     />
-                    {
-                      errors.name ? <span>{errors.name}</span> :null
-                    }
+                  
                   </div>
                   <div className="input_section">
                     <label className="lable" htmlFor="phone">
@@ -130,7 +131,7 @@ const Contact = () => {
                     
                     ></textarea>
                   </div>
-                  <button type="submit"> {issubmiting ? t("contact.submit")+".." : t("contact.submit")}</button>
+                  <button type="submit">  {t("contact.submit")}</button>
                 </form>
               </div>
             </div>

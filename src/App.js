@@ -1,17 +1,18 @@
-import React, { useEffect } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route, createBrowserRouter , RouterProvider} from "react-router-dom";
 import Layout from './components/layout/Layout';
-import Home from './components/pages/home/Home';
-import About from './components/pages/about/About';
-import Servies from './components/pages/servies/Servies';
-import OurWork from './components/pages/ourWork/Our-Work';
-import Contact from './components/pages/contact/Contact';
-import './App.scss';
-import SingleProduct from "./components/pages/singleProduct/SingleProduct";
-import Sainglemember from "./components/pages/Sainglemember/Sainglemember";
 import Erorrpage from "./components/pages/erornotfound/Erorrpage";
+import Loading from "./components/loading/Loading";
 
 const App = () => {
+  const Homelazy = lazy (() => import ('./components/pages/home/Home'))
+  const Aboutlazy = lazy (() => import ('./components/pages/about/About'))
+  const Servieslazy = lazy (() => import ('./components/pages/servies/Servies'))
+  const Contactlazy = lazy (() => import ('./components/pages/contact/Contact'))
+  const Singelproductlazy = lazy (() => import ("./components/pages/singleProduct/SingleProduct"))
+  const Ourworklazy = lazy (() => import ('./components/pages/ourWork/Our-Work'))
+  const Sainglememberlazy = lazy (() => import ("./components/pages/Sainglemember/Sainglemember"))
+
 
   const handleCopy = (event) => {
     event.preventDefault()
@@ -32,38 +33,38 @@ const router = createBrowserRouter([
     errorElement:<Erorrpage />,
     children:[
       {
-       element:<Home />,
+       element:<Suspense fallback = { <Loading />}> <Homelazy /></Suspense>,
         index:true,
         
       },
       {
         path:"about",
-        element:<About />
+        element:<Suspense fallback = { <Loading />}> <Aboutlazy/></Suspense>
         
       },
       {
         path:"servies",
-        element:<Servies />
+        element:<Suspense fallback = { <Loading />}> <Servieslazy /></Suspense>
         
       },
       {
         path:"our-work",
-        element:<OurWork />
+        element:<Suspense fallback = { <Loading />}> <Ourworklazy /></Suspense>
         
       },
       {
         path:"contact",
-        element:<Contact />
+        element:<Suspense fallback = { <Loading />}> <Contactlazy /></Suspense>
         
       },
       {
         path:"SingleProduct/:id",
-        element:<SingleProduct />
+        element:<Suspense fallback = { <Loading />}> <Singelproductlazy /></Suspense>
         
       },
       {
         path:"Sainglemember/:id",
-        element:<Sainglemember />
+        element:<Suspense fallback = { <Loading />}> <Sainglememberlazy /></Suspense>
         
       },
     ]

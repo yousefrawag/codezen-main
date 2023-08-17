@@ -7,9 +7,10 @@ import imgHello from "../pages/images/hello.svg"
 import { useTranslation } from 'react-i18next'
 import {AiFillCloseCircle} from "react-icons/ai"
 import { toast } from 'react-toastify'
+import {BsWhatsapp} from "react-icons/bs"
 
 const Whatsaapcontact = () => {
-  const { massage_Apper ,  close_massage  ,massageHandelar} = useGlobalContext()
+  const { massage_Apper ,  close_massage  ,massageHandelar } = useGlobalContext()
   useEffect(() => {
     setTimeout(massageHandelar, 2000); // 2 minutes = 120,000 milliseconds
   }, []);
@@ -30,7 +31,7 @@ const Whatsaapcontact = () => {
     toast.success("شكرا لتواصلك سيتم الرد عليك فى اسرع وقت")
  }
   return (
-  
+ <React.Fragment>
       <div className={massage_Apper ? "massage_section active_massage " : "massage_section"}>
 
         <button type='button' className='close_massage' onClick={ close_massage}> <AiFillCloseCircle/> </button>
@@ -60,8 +61,10 @@ const Whatsaapcontact = () => {
         </div>
 
       </div>
+      <button onClick={massageHandelar} className='whats_button' type='button'> {t("ms_btn")} <BsWhatsapp/> </button>
 
- 
+
+      </React.Fragment>
   )
 }
 

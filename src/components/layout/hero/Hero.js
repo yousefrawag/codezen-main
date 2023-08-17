@@ -13,8 +13,8 @@ const Fade = () => {
             <div className="text-title">
               <p>{t('hero_title')}</p>
               <div>
-              <Link to ="contact">{t('contact_us')}</Link>
-              <Link to ="about">{t('who_we_are')}</Link>
+              <Link className="bages_links" to ="contact">{t('contact_us')}</Link>
+              <Link className="bages_links" to ="about">{t('who_we_are')}</Link>
               </div>
             </div>
         

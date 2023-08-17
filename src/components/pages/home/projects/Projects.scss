@@ -4,6 +4,11 @@
 .projects {
     padding: $padding_80;
     background-color: $color_5;
+    .button-countainer {
+     .our-work-button {
+        text-decoration: none;
+      }
+    }
     
     .projects_container {
         padding: 50px 0;
@@ -130,6 +135,7 @@
     transition: transform .25s;
     .link_to{
       color: $color_1;
+      text-decoration: none;
     }
 
     &::before {

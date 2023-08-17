@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import Coustomheader from  "../../coustom_header/Coustomheader.jsx"
 import "../home/services/services.scss"
 import { useState } from 'react';
+import emailjs from 'emailjs-com';
 const   SingleProduct = () => {
   const { t } = useTranslation();
   const { id } = useParams();
@@ -30,7 +31,26 @@ const   SingleProduct = () => {
     const value = e.target.value
     setMessage_Fit({...message_Fit , [id]:value})
   }
-  console.log(message_Fit);
+  const onsubmit_Form = async (e) => {
+    e.preventDefault()
+    try {
+      await emailjs.send("service_xcr9kal","template_8392w2u" , message_Fit , "MvvmMcHoZ4pfShaNN");
+      setMessage_Fit(
+        {
+          name:"",
+          email:"",
+          phone:"",
+          message:""
+        }
+      )
+        toast.success("thanks for your comment")
+       return navagition("/")
+    } catch (error) {
+      return toast.error("there is an erorr,pleas check your internet and try again")
+      
+    }
+  }
+  
   if(!project) {
     toast.error(" sorry, we cant find product you looking for, please try again")
     return navagition("/")
@@ -38,7 +58,7 @@ const   SingleProduct = () => {
 
   return (
     <>
-    <BreadCrumb title="project" />
+    <BreadCrumb title={project.bage.title} />
     <div className='single-product-wrapper'>
       
       <div className="container">
@@ -81,16 +101,16 @@ const   SingleProduct = () => {
                            
                                    
                               <div className="col-6" >
-                                      <h5 className='h5'>web-desigin</h5>
+                                      <h5 className='h6'>web-desigin</h5>
                               </div>
                               <div className="col-6" >
-                                    <h5 className='h5'>web-desigin</h5>
+                                    <h5 className='h6'>web-desigin</h5>
                             </div>
                               <div className="col-6" >
-                                    <h5 className='h5'>web-desigin</h5>
+                                    <h5 className='h6'>web-desigin</h5>
                             </div>
                             <div className="col-6" >
-                                    <h5 className='h5'>web-desigin</h5>
+                                    <h5 className='h6'>web-desigin</h5>
                             </div>
                            
                        </div>
@@ -119,7 +139,7 @@ const   SingleProduct = () => {
               </div>
               <div className="single-product-comment">
                 <h4>Does it fit your idea?</h4>
-                <form className="single-form">
+                <form onSubmit={onsubmit_Form} className="single-form">
                   <div className='inpu-parent' style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
                   <div className="form-group">
                     <input

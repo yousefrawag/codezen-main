@@ -96,7 +96,8 @@
     "footer_upper": {
         "best_inbox": "أحدث العروض في بريدك",
         "place_holder": "البريد إلكتروني ",
-        "Subscribe": "اشتراك"
+        "Subscribe": "اشتراك",
+        "Subscribe2": "...اشتراك"
     },
 
     "footer_center": {
@@ -181,15 +182,51 @@
     "footer_copy": "تيم كودزين . 2023 .جميع الحقوق محفوظة",
     "Projects_title":"اعمالنا",
      "Projects": [
+      {
+        "id": "04",
+        "category": "Web Design",
+        "bage":{
+          "title": "موقع المركز الادارى للتدريب المالى",
+          "description":
+            "موقع المركز الادارى للتدريب المالى  هو منصه تعليمه كامله يتيح للطلاب فتح حساب عن طريق الفيسبوك او جوجل  عرض جميع الكورسات مع فلتره لجميع الكورسات حسب التخصص او ",
+          "technologies": ["html", " css", "js", "bootstrap"],
+          "imgUrl": "../../../../images/img-pro-4.png",
+          "siteUrl": "#",
+        "client":{
+          "name":"mohamed ahemd",
+          "urimage":""
+        }
+        }
+       
+      
+      },
+      
         {
-          "id": "01",
-          "category": "برمجه المواقع",
+          "id": "050",
+          "category":"Web Design", 
           "bage":{
-            "title": "موقع عالم كوره",
+            "imgUrl":"../../../images/Screenshot (145).png",
+            "title": "منصه زدنا خاصه بعالم التسويق",
             "description":
-            "موقع عالم كوره موقع متخصص فى اخبار الرياضه ومتبع نتائج المباريات  وجميع الدوريات وامكانيه متابع المباريات لايف ",
+              "  منصة زدنا منصة خاصة بعالم التسويق الإلكتروني، نقدم لكم خلاصة خبرتنا، لتصلوا إلى العملاء المحتملين وتحققوا أهدافكم. التسويق الرقمي هو أول خطوة؛ من أجل بناء علامة تجارية متكاملة، معنا تحصلون على باقة متكاملة من الخدمات التي تدعم أعمالكم، تواصلوا الآن، وطوروا أعمالكم",
+            "technologies":  ["html", " css", "js", "bootstrap" , "jeQuery"],
+            "siteUrl": "https://zednah.com/",
+          "client":{
+            "name":"mohamed ahemd",
+            "urimage":""
+          }
+          }
+         
+        },
+        {
+          "id": "0100",
+          "category": "Web Design",
+          "bage":{
+            "title": "اوكودا لخدمات التصميم",
+            "description":
+          "تأسست شركة اوكودا لخدمات التصميم في السعودية على يد كوادر طموحة، مبدعة، وذات خبرة واسعة في مجال التصميم الإبداعي، لتصبح واحدة من أكبر الشركات الرسمية والمعتمدة المتخصصة في مجالات التصميم وبناء العلامات التجارية وحلول الإعلان في السعوديه والشرق",
           "technologies": ["html" , "css" , "js" , "react"],
-          "imgUrl": "../../../images/img-pro-1.png",
+          "imgUrl": "../../../images/Screenshot (147).png",
           "siteUrl": "#",
           "client":{
             "name":"mohamed ahemd",
@@ -200,7 +237,7 @@
         },
         {
           "id": "02", 
-          "category": "واجهات المستخدم",
+          "category": "Ux Desigin",
           "bage":{
             "title": "موقع تجاره الكترونيه",
             "description":
@@ -216,9 +253,26 @@
           
         },
         {
+          "id": "01",
+          "category": "Web Design",
+          "bage":{
+            "title": "موقع عالم كوره",
+            "description":
+            "موقع عالم كوره موقع متخصص فى اخبار الرياضه ومتبع نتائج المباريات  وجميع الدوريات وامكانيه متابع المباريات لايف ",
+          "technologies": ["html" , "css" , "js" , "react"],
+          "imgUrl": "../../../images/img-pro-1.png",
+          "siteUrl": "#",
+          "client":{
+            "name":"mohamed ahemd",
+            "urimage":""
+          }
+          }
+         
+        },
+        {
           "id": "03",
           "imgUrl": "company1",
-          "category": "واجهات المستخدم",
+          "category": "Web Design",
           "bage":{
             "title": "موقع لشركه كونيكت باور للاستشارات الهندسيه",
             "description":
@@ -235,26 +289,8 @@
         
         },
         {
-          "id": "04",
-          "category": "برمجه المواقع",
-          "bage":{
-            "title": "موقع المركز الادارى للتدريب المالى",
-            "description":
-              "موقع المركز الادارى للتدريب المالى  هو منصه تعليمه كامله يتيح للطلاب فتح حساب عن طريق الفيسبوك او جوجل  عرض جميع الكورسات مع فلتره لجميع الكورسات حسب التخصص او ",
-            "technologies": ["html", " css", "js", "bootstrap"],
-            "imgUrl": "../../../../images/img-pro-4.png",
-            "siteUrl": "#",
-          "client":{
-            "name":"mohamed ahemd",
-            "urimage":""
-          }
-          }
-         
-        
-        },
-        {
           "id": "05",
-          "category":"واجهات المستخدم", 
+          "category":"Web Design", 
           "bage":{
             "imgUrl": "../../../../images/img-pro-5.jpg",
             "title": "شركه برمجيات وتسويق",
@@ -269,10 +305,10 @@
           }
          
         },
-      
+    
         {
           "id": "06",
-          "category": "واجهات المستخدم",
+          "category": "Ux Desigin",
           "bage":{
         "imgUrl": "../../../../images/img-pro-6.jpg",
           "title": "واجه مستخدم لموقع  يقد كورسات برمجيه",

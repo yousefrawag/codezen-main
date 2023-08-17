@@ -5,6 +5,8 @@ import Header from "../../layout/header/Header";
 import Servies from './services/services';
 import Projects from './projects/Projects';
 import Coustomheader from '../../coustom_header/Coustomheader.jsx'
+import Loading from '../../loading/Loading';
+
 
 const Home = () => {
   const {t} = useTranslation()
@@ -14,7 +16,7 @@ const Home = () => {
     {/* header */}
 
     <Header/>
-
+   
     {/* Home Wrapper 1 */}
 
     <Servies/>

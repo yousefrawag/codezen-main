@@ -8,7 +8,7 @@ const BreadCrumb = (props) => {
     <div className="breadcrumb">
       <div className="container">
         <div className="breadcrumb-item">
-          <Link className="dir-m" to="/">
+          <Link className="dir-m bages_links" to="/">
             home
           </Link>{" "}
           / {title}

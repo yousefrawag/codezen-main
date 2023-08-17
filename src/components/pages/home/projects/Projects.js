@@ -95,7 +95,7 @@ const Projects = () => {
         </div>
       </div>
       <div className="button-countainer text-center">
-        <Link to="/our-work">{t("show more")} !</Link>
+        <Link className='our-work-button' to="/our-work">{t("show more")} !</Link>
       </div>
     </section>
   )

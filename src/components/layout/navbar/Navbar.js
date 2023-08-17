@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Langs from '../langs/langs';
 import "./Navbar.scss";
 import { useState } from 'react';
-import { AiOutlineMenuFold } from 'react-icons/ai'
+import {AiOutlineMenu} from 'react-icons/ai'
 const Navbar = () => {
   const {t} = useTranslation();
   const [navFix, SetNavFix] = useState(false)
@@ -27,7 +27,7 @@ const Navbar = () => {
     
     </div>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <AiOutlineMenuFold  className="icon"/>
+    <AiOutlineMenu  className="icon"/>
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">

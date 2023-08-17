@@ -41,7 +41,7 @@ const Member = () => {
                                           <p className='jop'>{meber.jop_type} </p>
                                           <p className='subtitle'>{meber.subtitle}</p>
                                           <hr />
-                                          <Link className='to_member_details' to={`/Sainglemember/${meber.id}`}>show profile</Link>
+                                          <Link className='to_member_details bages_links' to={`/Sainglemember/${meber.id}`}>show profile</Link>
                                   </div>
                               
                               </div>
